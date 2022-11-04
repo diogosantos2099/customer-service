@@ -5,7 +5,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript microservice with PostgreSQL DB for handling customer information. 
+[Nest](https://github.com/nestjs/nest) framework TypeScript microservice for handling **customer** information, with a [PostgreSQL](https://www.postgresql.org/) DB, managed through [Prisma](https://www.prisma.io/). 
 
 Dependencies:
 - [@nestjs/platform-fastify](https://docs.nestjs.com/techniques/performance)
