@@ -25,11 +25,11 @@ export class Service {
     );
 
     const options = new DocumentBuilder()
-      .setTitle('nestjs-template')
-      .setDescription('NestJS template description')
+      .setTitle('customer-service')
+      .setDescription('Customer service')
       .setVersion('1.0')
       .setContact('Diogo', '', 'diogo.miguel.c.santos@gmail.com')
-      .addTag('example')
+      .addTag('customer')
       .addBearerAuth()
       .build();
     const document = SwaggerModule.createDocument(app, options);

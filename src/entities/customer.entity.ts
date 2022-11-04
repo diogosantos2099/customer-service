@@ -1,8 +1,8 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
-export class ExampleEntity {
+export class CustomerEntity {
   /**
-   * The id of ExampleEntity
+   * The id of the Customer
    * @example 1
    */
   @ApiProperty({ example: 1 })
