@@ -16,7 +16,7 @@ describe('AppService', () => {
   describe('get', () => {
     it('should resolve successfully', async () => {
       const id = 1;
-      const expected: CustomerEntity = { id, value: 'some value' };
+      const expected: CustomerEntity = { id, name: 'customer name' };
       const result = await appService.get(id);
 
       expect(result).toEqual(expected);

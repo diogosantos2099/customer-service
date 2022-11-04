@@ -24,7 +24,7 @@ describe('AppController (e2e)', () => {
 
   it('/customer/{id} (GET)', () => {
     const id = 1;
-    const response: CustomerEntity = { id, value: 'some value' };
+    const response: CustomerEntity = { id, name: 'customer name' };
     return request(app.getHttpServer())
       .get(`/customer/${id}`)
       .expect(200)

@@ -24,7 +24,7 @@ describe('AppController', () => {
   describe('get', () => {
     it('should return successful response', async () => {
       const id = 1;
-      const expected: CustomerEntity = { id, value: 'some value' };
+      const expected: CustomerEntity = { id, name: 'csutomer name' };
       appService.get = jest.fn().mockResolvedValue(expected);
 
       expect(await appController.get(id)).toBe(expected);

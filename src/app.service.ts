@@ -9,7 +9,7 @@ export class AppService {
    * @returns Customer model
    */
   get(id: number): Promise<CustomerEntity> {
-    const exampleEntity: CustomerEntity = { id, value: 'some value' };
+    const exampleEntity: CustomerEntity = { id, name: 'customer name' };
     return Promise.resolve(exampleEntity);
   }
 }

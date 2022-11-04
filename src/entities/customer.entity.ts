@@ -9,9 +9,35 @@ export class CustomerEntity {
   readonly id: number;
 
   /**
-   * The value of ExampleEntity
-   * @example some value
+   * The name of the Customer
+   * @example Customer Name
    */
-  @ApiPropertyOptional({ example: 'some value' })
-  readonly value?: string;
+  @ApiProperty({ example: 'Customer Name' })
+  readonly name: string;
+
+  /**
+   * The customer address
+   * @example Customer Address
+   */
+  @ApiPropertyOptional({ example: 'Customer Address' })
+  readonly address?: string;
+
+  /**
+   * Indicates whether Customer is active or not
+   * @example true
+   */
+  @ApiPropertyOptional({ example: true })
+  readonly active?: boolean;
+
+  /**
+   * Creation date
+   * @example
+   */
+  readonly createdAt?: Date;
+
+  /**
+   * Last updated date
+   * @example
+   */
+  readonly updatedAt?: Date;
 }
