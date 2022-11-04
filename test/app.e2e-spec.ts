@@ -22,11 +22,11 @@ describe('AppController (e2e)', () => {
     await app.close();
   });
 
-  it('/example/{id} (GET)', () => {
+  it('/customer/{id} (GET)', () => {
     const id = 1;
     const response: CustomerEntity = { id, value: 'some value' };
     return request(app.getHttpServer())
-      .get(`/example/${id}`)
+      .get(`/customer/${id}`)
       .expect(200)
       .expect(response);
   });
