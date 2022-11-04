@@ -33,11 +33,13 @@ export class CustomerEntity {
    * Creation date
    * @example
    */
+  @ApiPropertyOptional({ example: new Date() })
   readonly createdAt?: Date;
 
   /**
    * Last updated date
    * @example
    */
+  @ApiPropertyOptional({ example: new Date() })
   readonly updatedAt?: Date;
 }
