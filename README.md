@@ -5,11 +5,12 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript microservice for handling **customer** information, with a [PostgreSQL](https://www.postgresql.org/) DB, managed through [Prisma](https://www.prisma.io/). 
+[Nest](https://github.com/nestjs/nest) microservice example for handling **customer** information, with a [PostgreSQL](https://www.postgresql.org/) DB, managed through [Prisma](https://www.prisma.io/). 
 
 Dependencies:
 - [@nestjs/platform-fastify](https://docs.nestjs.com/techniques/performance)
 - [@nestjs/swagger](https://docs.nestjs.com/openapi/introduction)
+- [@prisma/client](https://www.prisma.io/docs/concepts/components/prisma-client)
 - [dotenv](https://www.dotenv.org/)
 
 ### Swagger
