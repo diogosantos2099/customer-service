@@ -9,7 +9,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   /**
-   * /example/{id} (GET)
+   * /customer/{id} (GET)
    * @param id The id of the Customer
    * @returns Customer model
    */
