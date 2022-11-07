@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CustomerEntity } from './entities/customer.entity';
+import { Customer } from './customer/entities/customer.entity';
 
 @Injectable()
 export class AppService {
@@ -8,8 +8,8 @@ export class AppService {
    * @param id The id of the Customer
    * @returns Customer model
    */
-  get(id: number): Promise<CustomerEntity> {
-    const exampleEntity: CustomerEntity = { id, name: 'customer name' };
+  get(id: number): Promise<Customer> {
+    const exampleEntity: Customer = { id, name: 'customer name' };
     return Promise.resolve(exampleEntity);
   }
 }

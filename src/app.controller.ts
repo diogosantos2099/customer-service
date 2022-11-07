@@ -1,15 +1,15 @@
 import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AppService } from './app.service';
-import { CustomerEntity } from './entities/customer.entity';
+import { Customer } from './customer/entities/customer.entity';
 
-@ApiTags('Customer API')
-@Controller('customer')
+@ApiTags('Example API')
+@Controller('example')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   /**
-   * /customer/{id} (GET)
+   * /example/{id} (GET)
    * @param id The id of the Customer
    * @returns Customer model
    */
@@ -19,7 +19,7 @@ export class AppController {
   @ApiResponse({
     status: 200,
     description: 'Success',
-    type: CustomerEntity,
+    type: Customer,
   })
   @ApiResponse({ status: 400, description: 'Bad Request' })
   @ApiResponse({ status: 404, description: 'Not Found' })
@@ -27,7 +27,7 @@ export class AppController {
   @Get(':id')
   async get(
     @Param('id', new ParseIntPipe()) id: number,
-  ): Promise<CustomerEntity> {
+  ): Promise<Customer> {
     return await this.appService.get(id);
   }
 }
