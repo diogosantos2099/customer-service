@@ -3,7 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
-import { CustomerEntity } from 'src/entities/customer.entity';
+import { Customer } from '../src/customer/entities/customer.entity';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -24,7 +24,7 @@ describe('AppController (e2e)', () => {
 
   it('/customer/{id} (GET)', () => {
     const id = 1;
-    const response: CustomerEntity = { id, name: 'customer name' };
+    const response: Customer = { id, name: 'customer name' };
     return request(app.getHttpServer())
       .get(`/customer/${id}`)
       .expect(200)

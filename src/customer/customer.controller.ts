@@ -1,5 +1,19 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
+import {
+  ApiCreatedResponse,
+  ApiOkResponse,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 import { Customer } from './entities/customer.entity';
 import { CustomerService } from './customer.service';
 import { CreateCustomerDto } from './dto/create-customer.dto';
@@ -14,7 +28,7 @@ export class CustomerController {
    * /customer (POST)
    * @returns Created customer
    */
-   @ApiOperation({
+  @ApiOperation({
     summary: 'Create a new customer',
   })
   @ApiCreatedResponse({
@@ -32,7 +46,7 @@ export class CustomerController {
    * /customer (GET)
    * @returns All customers
    */
-   @ApiOperation({
+  @ApiOperation({
     summary: 'Fetch all customers',
   })
   @ApiOkResponse({
@@ -51,7 +65,7 @@ export class CustomerController {
    * @param id customer id
    * @returns customer by id
    */
-   @ApiOperation({
+  @ApiOperation({
     summary: 'Fetch customer by id',
   })
   @ApiOkResponse({
@@ -71,7 +85,7 @@ export class CustomerController {
    * @param updateCustomerDto customer to update
    * @returns updated customer
    */
-   @ApiOperation({
+  @ApiOperation({
     summary: 'Update a customer by id',
   })
   @ApiOkResponse({
@@ -81,7 +95,10 @@ export class CustomerController {
   @ApiResponse({ status: 404, description: 'Not Found' })
   @ApiResponse({ status: 500, description: 'Internal Server Error' })
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCustomerDto: UpdateCustomerDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateCustomerDto: UpdateCustomerDto,
+  ) {
     return this.customerService.update(+id, updateCustomerDto);
   }
 
@@ -91,7 +108,7 @@ export class CustomerController {
    * @param updateCustomerDto customer to delete
    * @returns The deleted customer
    */
-   @ApiOperation({
+  @ApiOperation({
     summary: 'Delete a customer by id',
   })
   @ApiOkResponse({

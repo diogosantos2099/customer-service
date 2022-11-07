@@ -9,8 +9,8 @@ export class CustomerService {
 
   /**
    * Creates a new Customer
-   * @param createCustomerDto 
-   * @returns 
+   * @param createCustomerDto
+   * @returns
    */
   create(createCustomerDto: CreateCustomerDto) {
     return this.prismaService.customer.create({ data: createCustomerDto });
@@ -26,11 +26,11 @@ export class CustomerService {
 
   /**
    * Get customer by id
-   * @param id 
+   * @param id
    * @returns The customer
    */
   findOne(id: number) {
-    return this.prismaService.customer.findUnique({ where: {id} });
+    return this.prismaService.customer.findUnique({ where: { id } });
   }
 
   /**
@@ -40,7 +40,10 @@ export class CustomerService {
    * @returns updated customer
    */
   update(id: number, updateCustomerDto: UpdateCustomerDto) {
-    return this.prismaService.customer.update({ where: {id}, data: updateCustomerDto });
+    return this.prismaService.customer.update({
+      where: { id },
+      data: updateCustomerDto,
+    });
   }
 
   /**
@@ -50,6 +53,6 @@ export class CustomerService {
    * @returns The deleted customer
    */
   remove(id: number) {
-    return this.prismaService.customer.delete({ where: {id} });
+    return this.prismaService.customer.delete({ where: { id } });
   }
 }
