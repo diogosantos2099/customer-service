@@ -34,6 +34,24 @@ $ docker run -d -p 8080:8080 -t customer-service
 $ npm install
 ```
 
+## Database Setup
+
+If you don't have a real PostgreSQL database, you can set up a container locally: 
+```bash
+# Creates and starts container with PostgreSQL image
+# Note: Make sure nothing is running on port 5432
+$ docker-compose up
+
+# Creates database 'customersdb'
+$ npx prisma db push
+
+# Creates schema by running migration scripts 
+$ npx prisma migrate dev
+
+# Populates db with records from prisma/seed.ts
+$ npx prisma db seed
+```
+
 ## Running the app
 
 ```bash
