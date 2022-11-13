@@ -27,14 +27,14 @@ describe('PrismaService', () => {
   describe('enableShutdownHooks', () => {
     it('should call $on and successfully close the app', async () => {
       const spy = jest
-        .spyOn(PrismaService.prototype, '$on')
-        .mockImplementation(async () => {
-          await app.close();
-        });
+        .spyOn(service, '$on')
+        .mockImplementation(async (eventType, cb) =>
+          cb(() => Promise.resolve()),
+        );
 
       await service.enableShutdownHooks(app);
 
-      expect(spy).toBeCalledTimes(1);
+      expect(service.$on).toBeCalledTimes(1);
       expect(app.close).toBeCalledTimes(1);
       spy.mockRestore();
     });
